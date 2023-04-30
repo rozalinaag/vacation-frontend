@@ -10,6 +10,21 @@ import styles from './Post.module.scss';
 import { UserInfo } from '../UserInfo';
 import { PostSkeleton } from './Skeleton';
 
+
+type Props = {
+  _id: number,
+  title: string,
+  createdAt: any,
+  imageUrl: any,
+  user: any,
+  viewsCount: any,
+  commentsCount: any,
+  tags: any,
+  children?: any,
+  isFullPost?: any,
+  isLoading?: any,
+  isEditable: any,
+}
 export const Post = ({
   _id,
   title,
@@ -23,7 +38,7 @@ export const Post = ({
   isFullPost,
   isLoading,
   isEditable,
-}) => {
+}: Props) => {
   if (isLoading) {
     return <PostSkeleton />;
   }
