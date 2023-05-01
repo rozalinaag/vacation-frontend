@@ -2,10 +2,15 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  padding-bottom: 8px;
 }
 
 .month{
-  width: 86.66px;
+  width: 80px;
   text-align: center;
   border-right: 1px solid #d2d0d0;
+}
+
+.month:last-child{
+  border-right: none;
 }

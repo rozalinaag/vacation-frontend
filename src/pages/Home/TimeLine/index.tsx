@@ -1,9 +1,6 @@
 import React, {ReactElement, ReactFragment, useEffect, useState} from 'react';
-// @ts-ignore
 import styles from './styles.module.scss'
 import './styles.css'
-
-
 
 
 type Props = {
@@ -42,7 +39,7 @@ function TimeLine({reserved, idPerson}: Props) {
                 colorReservedItems(element)
             }
         }
-    }, [reserved])
+    }, [reserved, idPerson])
 
     const handleClick = (e: any) => {
         let target = e.target;

@@ -8,49 +8,63 @@ import {TagsBlock} from '../../components/TagsBlock';
 import {CommentsBlock} from '../../components/CommentsBlock';
 import TimeLine from "./TimeLine";
 import Months from "./Months";
+import {UserInfo} from "../../components";
 
 
 export const Home = () => {
-    // @ts-ignore
     return (
-        <div>
-            <div className={styles.table}>
+        <div className={styles.wrapper}>
 
+            <Tabs style={{marginBottom: 15}} value={0} aria-label="basic tabs example">
+                <Tab label="Весь год"/>
+                <Tab label="Сегодня"/>
+            </Tabs>
+
+            <div className={styles.table}>
                 <div className={styles.tableLine}>
-                    <Months/>
+                    <div className={styles.months}>
+                        <Months/>
+                    </div>
                     <div>
                         <div className={styles.card}>
-                            <div className={styles.persons}>
-                                <div>
-                                    Иван
-                                </div>
+                            <div className={styles.person}>
+                                <UserInfo avatarUrl={"http://www.interface.ru/iarticle/img/23221_38289142.jpg"} fullName={"Кирилл И."} additionalText={"15/10"}/>
                             </div>
                             <TimeLine reserved={[1, 3, 5]} idPerson={"w"}/>
                         </div>
-                        <div>
-                            <div className={styles.persons}>
-                                <div>
-                                    Иван
-                                </div>
+                        <div className={styles.card}>
+                            <div className={styles.person}>
+                                <UserInfo avatarUrl={"https://icdn.lenta.ru/images/2021/11/10/13/20211110130606121/detail_d6b057076e2a8350397b88e71a70b514.jpg"} fullName={"Антон Л."} additionalText={"15/10"}/>
+                            </div>
+                            <TimeLine reserved={[1, 3, 5]} idPerson={"k"}/>
+                        </div>
+                        <div className={styles.card}>
+                            <div className={styles.person}>
+                                <UserInfo avatarUrl={"https://tochka.by/upload/resize_cache/iblock/587/768_512_1/rwn72tl74r6erjav9fxtg5myp424t798.jpg"} fullName={"Маша К."} additionalText={"30/10"}/>
                             </div>
                             <TimeLine reserved={[1, 3, 5]} idPerson={"l"}/>
                         </div>
-                        <div>
-                            <div className={styles.persons}>
-                                <div>
-                                    Иван
-                                </div>
+                        <div className={styles.card}>
+                            <div className={styles.person}>
+                                <UserInfo avatarUrl={"https://tengrinews.kz/userdata/u380/2023-01/resize/837000ec9714d99ae660b6eb026cfbcd.jpeg"} fullName={"Двитрий Р."} additionalText={"15/10"}/>
                             </div>
-                            <TimeLine reserved={[1, 3, 5]} idPerson={"k"}/>
+                            <TimeLine reserved={[9, 10]} idPerson={"d"}/>
+                        </div>
+                        <div className={styles.card}>
+                            <div className={styles.person}>
+                                <UserInfo avatarUrl={"https://metaratings.ru/_images/insecure/w-680:h-512/bG9jYWw6Ly8vaW1hZ2VzL2QxL2I4L2QxYjgzOTYxMjcyOGNlM2Y4YzQyMDg3Y2Y2YTU2M2NkLmpwZw==.webp"} fullName={"Людмила К."} additionalText={"15/10"}/>
+                            </div>
+                            <TimeLine reserved={[1, 3, 5]} idPerson={"r"}/>
+                        </div>
+                        <div className={styles.card}>
+                            <div className={styles.person}>
+                                <UserInfo avatarUrl={"https://s16.stc.yc.kpcdn.net/share/i/12/12492885/wr-960.webp"} fullName={"Ирина Ж."} additionalText={"15/10"}/>
+                            </div>
+                            <TimeLine reserved={[1, 3, 5]} idPerson={"w"}/>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <Tabs style={{marginBottom: 15}} value={0} aria-label="basic tabs example">
-                <Tab label="Новые"/>
-                <Tab label="Популярные"/>
-            </Tabs>
 
             <Grid container spacing={4}>
                 <Grid xs={8} item>
@@ -81,7 +95,6 @@ export const Home = () => {
                                     fullName: 'Вася Пупкин',
                                     avatarUrl: 'https://mui.com/static/images/avatar/1.jpg',
                                 },
-                                text: 'Это тестовый комментарий',
                             }
                         ]}
                         isLoading={false}
