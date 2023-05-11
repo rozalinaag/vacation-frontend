@@ -49,6 +49,8 @@
 
 .person {
   width: var(--margin-person);
+  position: absolute;
+  background-color: white;
 }
 
 .card {

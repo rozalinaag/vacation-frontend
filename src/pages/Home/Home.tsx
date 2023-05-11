@@ -11,7 +11,7 @@ import {CommentsBlock} from '../../components/CommentsBlock';
 import TimeLine from "./TimeLine";
 import Months from "./Months";
 import {UserInfo} from "../../components";
-
+import MenuItems from "./MenuItems";
 
 export const Home = () => {
     const dispatch: any = useDispatch();
@@ -27,6 +27,7 @@ export const Home = () => {
 
     return (
         <div className={styles.wrapper}>
+            <MenuItems/>
 
             <Tabs style={{marginBottom: 15}} value={0} aria-label="basic tabs example">
                 <Tab label="Весь год"/>
@@ -91,23 +92,23 @@ export const Home = () => {
 
             <Grid container spacing={4}>
                 <Grid xs={8} item>
-                    {(isPostsLoading? [...Array(5)]: posts.items).map((obj: any, index: number) => (
-                        isPostsLoading?
+                    {(isPostsLoading ? [...Array(5)] : posts.items).map((obj: any, index: number) => (
+                        isPostsLoading ?
                             (
-                                <Post key={index} isLoading = {true}/>
-                            ):
-                        <Post
-                            key={obj._id}
-                            _id={obj._id}
-                            title={obj.title}
-                            imageUrl="https://res.cloudinary.com/practicaldev/image/fetch/s--UnAfrEG8--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/icohm5g0axh9wjmu4oc3.png"
-                            user={obj.user}
-                            createdAt={obj.createdAt}
-                            viewsCount={obj.viewsCount}
-                            commentsCount={3}
-                            tags={obj.tags}
-                            isEditable
-                        />
+                                <Post key={index} isLoading={true}/>
+                            ) :
+                            <Post
+                                key={obj._id}
+                                _id={obj._id}
+                                title={obj.title}
+                                imageUrl="https://res.cloudinary.com/practicaldev/image/fetch/s--UnAfrEG8--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/icohm5g0axh9wjmu4oc3.png"
+                                user={obj.user}
+                                createdAt={obj.createdAt}
+                                viewsCount={obj.viewsCount}
+                                commentsCount={3}
+                                tags={obj.tags}
+                                isEditable
+                            />
                     ))}
                 </Grid>
                 <Grid xs={4} item>
@@ -125,6 +126,7 @@ export const Home = () => {
                     ></CommentsBlock>
                 </Grid>
             </Grid>
+
         </div>
     );
 };

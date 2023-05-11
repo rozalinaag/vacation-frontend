@@ -48,7 +48,7 @@ function TimeLine({reserved, idPerson}: Props) {
     }
 
     return (
-        <div>
+        <div className={styles.timeLine}>
             <div className={styles.weeks} onClick={handleClick}>
                 {createWeeksLine()}
             </div>
