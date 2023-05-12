@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import {Navigate} from "react-router-dom";
-import styles from './Register.module.scss';
+import styles from './styles.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchRegister, selectIsAuth} from "../../redux/slices/auth";
 import {useForm} from "react-hook-form";

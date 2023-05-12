@@ -1,11 +1,27 @@
+/// <reference path="..." />
 {
 "compilerOptions": {
 "outDir": "./dist/",
+  "strict": false,
 "sourceMap": true,
+  "baseUrl": "src",
 "noImplicitAny": true,
 "module": "commonjs",
 "target": "es6",
-"jsx": "react",
+  "tsx": "react-tsx",
+  "jsx": "react-jsx",
   "allowSyntheticDefaultImports": true,
+  "typeRoots": [
+    "../node_modules/@types"
+  ]
 },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "*.tsx",
+    "**/*.tsx",
+    "**/**/*.ts",
+    "**/**/*.tsx",
+    "styles.module.scss"
+  ]
 }

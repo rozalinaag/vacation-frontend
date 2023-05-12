@@ -2,6 +2,7 @@ import {useEffect} from "react";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Grid from '@mui/material/Grid';
+// @ts-ignore
 import styles from './styles.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {fetchPosts, fetchTags} from "../../redux/slices/posts";
@@ -15,6 +16,7 @@ import MenuItems from "./MenuItems";
 
 export const Home = () => {
     const dispatch: any = useDispatch();
+    // @ts-ignore
     const {posts, tags} = useSelector(state => state.posts);
 
     const isPostsLoading = posts.status === 'loading';

@@ -1,4 +1,5 @@
 import React, {ReactElement, ReactFragment, useEffect, useState} from 'react';
+// @ts-ignore
 import styles from './styles.module.scss'
 import './styles.css'
 

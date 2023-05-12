@@ -18,8 +18,8 @@ export const Login = () => {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useForm({
         defaultValues: {
-            email: 'agisheva_rm@magnit.com',
-            password: '123'
+            email: 'agisheva@magnit.com',
+            password: ''
         },
         mode: 'onChange'
     })

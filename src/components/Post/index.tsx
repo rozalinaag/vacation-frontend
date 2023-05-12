@@ -7,27 +7,27 @@ import EyeIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import CommentIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import {Link} from 'react-router-dom'
 
-import styles from './Post.module.scss';
+import styles from './styles.module.scss';
 import { UserInfo } from '../UserInfo';
 import { PostSkeleton } from './Skeleton';
 
 
 type Props = {
-  _id: number,
-  title: string,
-  createdAt: any,
-  imageUrl: any,
-  user: any,
-  viewsCount: any,
-  commentsCount: any,
-  tags: any,
+  _id?: number,
+  title?: string,
+  createdAt?: any,
+  imageUrl?: any,
+  user?: any,
+  viewsCount?: any,
+  commentsCount?: any,
+  tags?: any,
   children?: any,
   isFullPost?: any,
   isLoading?: any,
-  isEditable: any,
+  isEditable?: any,
 }
 export const Post = ({
-  _id,
+  id,
   title,
   createdAt,
   imageUrl,
@@ -50,7 +50,7 @@ export const Post = ({
     <div className={clsx(styles.root, { [styles.rootFull]: isFullPost })}>
       {isEditable && (
         <div className={styles.editButtons}>
-          <Link to={`/posts/${_id}/edit`}>
+          <Link to={`/posts/${id}/edit`}>
             <IconButton color="primary">
               <EditIcon />
             </IconButton>
@@ -71,10 +71,10 @@ export const Post = ({
         <UserInfo {...user} additionalText={createdAt} />
         <div className={styles.indention}>
           <h2 className={clsx(styles.title, { [styles.titleFull]: isFullPost })}>
-            {isFullPost ? title : <Link to={`/posts/${_id}`}>{title}</Link>}
+            {isFullPost ? title : <Link to={`/posts/${id}`}>{title}</Link>}
           </h2>
           <ul className={styles.tags}>
-            {tags.map((name) => (
+            {tags.map((name: any) => (
               <li key={name}>
                 <a href={`/tag/${name}`}>#{name}</a>
               </li>
