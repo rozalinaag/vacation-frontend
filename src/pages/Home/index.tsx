@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import React, {useEffect} from "react";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Grid from '@mui/material/Grid';
@@ -12,11 +12,12 @@ import {CommentsBlock} from '../../components/CommentsBlock';
 import TimeLine from "./TimeLine";
 import Months from "./Months";
 import {UserInfo} from "../../components";
-import MenuItems from "./MenuItems";
+import {Navigate} from "react-router-dom";
+import {selectIsAuth} from "../../redux/slices/auth";
 
 export const Home = () => {
     const dispatch: any = useDispatch();
-    // @ts-ignore
+    const isAuth = useSelector(selectIsAuth);
     const {posts, tags} = useSelector(state => state.posts);
 
     const isPostsLoading = posts.status === 'loading';
@@ -29,13 +30,13 @@ export const Home = () => {
 
     return (
         <div className={styles.wrapper}>
-            <MenuItems/>
-
+            {!isAuth && (
+                <Navigate to="/login" replace={true} />
+            )}
             <Tabs style={{marginBottom: 15}} value={0} aria-label="basic tabs example">
                 <Tab label="Весь год"/>
                 <Tab label="Сегодня"/>
             </Tabs>
-
             <div className={styles.table}>
                 <div className={styles.tableLine}>
                     <div className={styles.months}>
@@ -91,7 +92,6 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
-
             <Grid container spacing={4}>
                 <Grid xs={8} item>
                     {(isPostsLoading ? [...Array(5)] : posts.items).map((obj: any, index: number) => (

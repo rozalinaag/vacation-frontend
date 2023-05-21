@@ -1,6 +1,6 @@
 .root {
   background-color: #fff;
-  padding: 10px 0;
+  padding: 15px 0;
   border-bottom: 1px solid #e0e0e0;
   margin-bottom: 30px;
 }
@@ -11,10 +11,10 @@
 }
 
 .logo {
-  background-color: black;
-  color: #fff;
-  font-weight: 700;
+  color: #000000;
+  font-weight: 800;
   line-height: 35px;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 0.15px;
   border-radius: 5px;
@@ -22,7 +22,8 @@
   text-decoration: none;
 
   &:hover {
-    background-color: #4361ee;
+    background-color: #383838;
+    color: white;
   }
 }
 
