@@ -2,13 +2,13 @@ import React from 'react';
 import Button from "@mui/material/Button";
 import {logout} from "../../../redux/slices/auth";
 import {useDispatch, useSelector} from "react-redux";
-import {Menu} from 'antd';
+import {Menu, Dropdown} from 'antd';
 import {Link} from "react-router-dom";
 import type {MenuProps} from 'antd';
 // @ts-ignore
 import styles from './styles.module.scss'
-import {UserOutlined} from "@ant-design/icons";
-
+import {UserOutlined, BellOutlined} from "@ant-design/icons";
+import Notification from "../Notification";
 
 function UserHeader() {
     const dispatch = useDispatch();
@@ -50,8 +50,9 @@ function UserHeader() {
 
     return (
         <div className={styles.UserField}>
+            <Notification/>
             <Link to="/posts/create">
-                <Button className={styles.create} variant="contained">Создать отпуск</Button>
+                <Button className={styles.create} style={{background: '#5666bd', boxShadow: 'none'}} variant="contained">Создать заявление</Button>
             </Link>
             <div className={styles.UserFieldHeader}>
                 <Menu

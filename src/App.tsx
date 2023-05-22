@@ -8,6 +8,12 @@ import {fetchAuthMe, selectIsAuth} from "./redux/slices/auth";
 import './index.scss';
 import MenuItems from './pages/Menu';
 
+import { ConfigProvider } from 'antd'
+import ru from 'antd/locale/ru_RU'
+import dayjs from 'dayjs'
+import 'dayjs/locale/es'
+dayjs.locale('ru')
+
 function App() {
     const dispatch = useDispatch();
     const isAuth = useSelector(selectIsAuth);
@@ -15,10 +21,11 @@ function App() {
     useEffect(() => {
         // @ts-ignore
         dispatch(fetchAuthMe())
-    }, [])
+    }, [dispatch])
 
     return (
         <div>
+            <ConfigProvider locale={ru}>
             <Header/>
             <Container maxWidth="xl">
                 <div className={'containerVacation'}>
@@ -34,6 +41,7 @@ function App() {
                         </Routes>
                 </div>
             </Container>
+            </ConfigProvider>
         </div>
     );
 }

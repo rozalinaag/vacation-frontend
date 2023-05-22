@@ -1,9 +1,8 @@
-import React, {useEffect} from "react";
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import React, {useEffect, useState} from "react";
 import Grid from '@mui/material/Grid';
 // @ts-ignore
 import styles from './styles.module.scss';
+import Divider from "@mui/material/Divider";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchPosts, fetchTags} from "../../redux/slices/posts";
 import {Post} from '../../components/Post';
@@ -14,10 +13,12 @@ import Months from "./Months";
 import {UserInfo} from "../../components";
 import {Navigate} from "react-router-dom";
 import {selectIsAuth} from "../../redux/slices/auth";
+import HeaderCreateForm from "./HeaderCreateForm";
 
 export const Home = () => {
     const dispatch: any = useDispatch();
     const isAuth = useSelector(selectIsAuth);
+    // @ts-ignore
     const {posts, tags} = useSelector(state => state.posts);
 
     const isPostsLoading = posts.status === 'loading';
@@ -26,17 +27,15 @@ export const Home = () => {
     useEffect(() => {
         dispatch(fetchPosts());
         dispatch(fetchTags());
-    }, [])
+    }, [dispatch])
 
+    // @ts-ignore
     return (
         <div className={styles.wrapper}>
             {!isAuth && (
                 <Navigate to="/login" replace={true} />
             )}
-            <Tabs style={{marginBottom: 15}} value={0} aria-label="basic tabs example">
-                <Tab label="Весь год"/>
-                <Tab label="Сегодня"/>
-            </Tabs>
+            <HeaderCreateForm/>
             <div className={styles.table}>
                 <div className={styles.tableLine}>
                     <div className={styles.months}>
@@ -92,6 +91,7 @@ export const Home = () => {
                     </div>
                 </div>
             </div>
+            <Divider className={styles.divider}/>
             <Grid container spacing={4}>
                 <Grid xs={8} item>
                     {(isPostsLoading ? [...Array(5)] : posts.items).map((obj: any, index: number) => (

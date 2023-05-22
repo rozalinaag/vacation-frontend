@@ -38,11 +38,10 @@
 
 .table {
   display: flex;
-  padding-bottom: 10px;
   overflow-x: auto;
   scrollbar-width: thin;
   scrollbar-color: blue orange;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   &Line {
   }
 }
@@ -55,4 +54,8 @@
 
 .card {
   display: flex;
+}
+
+.divider{
+  margin-bottom: 20px;
 }

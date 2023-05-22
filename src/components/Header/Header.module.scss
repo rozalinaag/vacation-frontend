@@ -8,10 +8,11 @@
 .inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  color: #000000;
+  color: #656565;
   font-weight: 800;
   line-height: 35px;
   font-size: 20px;
@@ -22,7 +23,7 @@
   text-decoration: none;
 
   &:hover {
-    background-color: #383838;
+    background-color: #5666bd;
     color: white;
   }
 }
@@ -36,3 +37,4 @@
     text-decoration: none;
   }
 }
+

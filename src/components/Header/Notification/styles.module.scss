@@ -1,0 +1,14 @@
+.bell{
+  scale: 1.5;
+  color: #656565;
+  &:hover{
+    color: #000000;
+    cursor: pointer;
+  }
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

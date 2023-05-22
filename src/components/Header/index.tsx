@@ -7,7 +7,6 @@ import Container from '@mui/material/Container';
 import { useSelector} from "react-redux";
 import { selectIsAuth} from "../../redux/slices/auth";
 import UserHeader from "./UserHeader";
-import MenuItems from "./Menu";
 
 export const Header = () => {
   const isAuth = useSelector(selectIsAuth);
