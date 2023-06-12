@@ -1,0 +1,49 @@
+.dates{
+  display: flex;
+  gap: 5px;
+  .date{
+    background: #e7e7e7;
+    border-radius: 10px;
+    padding: 1px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3381a2;
+  }
+}
+
+.days{
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+}
+
+.day{
+  background: #bfeaad;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 15px;
+  &:hover{
+    background: #98c78a;
+  }
+}
+
+.icon{
+  width: 57px;
+  height: 57px;
+  margin-left: -6px;
+}
+
+.body{
+  display: flex;
+}
+
+.wrapper{
+  border: 2px solid #e8e8e8;
+  background: rgba(250, 250, 250, 0.79);
+  border-radius: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}

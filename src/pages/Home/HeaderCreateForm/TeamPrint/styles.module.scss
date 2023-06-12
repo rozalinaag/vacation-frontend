@@ -1,0 +1,32 @@
+.title{
+  font-family: -apple-system;
+  font-size: 18px;
+  font-weight: 900;
+  color: #414141;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  &Icon{
+    width: 23px;
+    height: 23px;
+  }
+}
+
+.upLine{
+  display: flex;
+  justify-content: space-between;
+}
+
+.print{
+  svg{
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+  }
+  svg:hover{
+    width: 25px;
+    height: 25px;
+    fill: #3381a2;
+  }
+}

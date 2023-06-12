@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {BellOutlined} from "@ant-design/icons";
 // @ts-ignore
 import styles from "./styles.module.scss";
-import {Dropdown, Button, Modal} from "antd";
+import {Dropdown, Modal} from "antd";
 import type {MenuProps} from 'antd';
 
 function Notification() {
@@ -44,9 +44,9 @@ function Notification() {
     return (
         <div className={styles.wrapper}>
             <Dropdown menu={{items, onClick}} placement="bottom" arrow>
-                <a onClick={(e) => e.preventDefault()}>
+                <div onClick={(e) => e.preventDefault()}>
                     <BellOutlined className={styles.bell}/>
-                </a>
+                </div>
             </Dropdown>
             <Modal title="Уведомление:" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                 {message}

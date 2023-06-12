@@ -1,4 +1,4 @@
-import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
+import {createSlice, createAsyncThunk, PayloadAction} from '@reduxjs/toolkit';
 import axios from '../../axios'
 
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', async () => {
@@ -14,6 +14,8 @@ export const fetchTags = createAsyncThunk('posts/fetchTags', async () => {
 type Props = {
     posts: { items: string[], status: string },
     tags: { items: string[], status: string },
+    selectedYear: string,
+    selectedDates: any
 }
 const initialState: Props = {
     posts: {
@@ -23,13 +25,22 @@ const initialState: Props = {
     tags: {
         items: [],
         status: 'loading'
-    }
+    },
+    selectedYear: '2023',
+    selectedDates: []
 }
 
-const postsSlice = createSlice({
-    name: 'posts',
+const slice = createSlice({
+    name: 'vacation',
     initialState,
-    reducers: {},
+    reducers: {
+        setSelectedYear(state, action: PayloadAction<string>) {
+            state.selectedYear = action.payload;
+        },
+        setSelectedDates(state, action: PayloadAction<any>){
+            state.selectedDates = action.payload;
+        }
+    },
     extraReducers: builder => {
         builder.addCase(fetchPosts.pending, (state) => {
             state.posts.items = [];
@@ -58,4 +69,5 @@ const postsSlice = createSlice({
     }
 });
 
-export const postsReducer = postsSlice.reducer;
+export const {setSelectedYear, setSelectedDates} = slice.actions;
+export const vacationReducer = slice.reducer;

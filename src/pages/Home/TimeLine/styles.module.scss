@@ -1,8 +1,12 @@
 .week{
   background: #e8e8e8;
   width: 20px;
-  height: 39px;
+  height: 50px;
   border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
   &:active{
     background: #777676;
   }
