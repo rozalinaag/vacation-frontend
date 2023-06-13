@@ -1,0 +1,31 @@
+.wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: white;
+  border-radius: 5px;
+  padding: 50px;
+}
+
+.form{
+  width: 800px;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #e1e1e1;
+  background: #f3f8fd;
+}
+
+.bottom{
+ padding-left: 250px;
+}
+
+.title{
+  font-weight: 500;
+  font-size: 20px;
+}

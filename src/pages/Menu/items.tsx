@@ -47,3 +47,24 @@ export const items: MenuProps['items'] = [
     getItem('Настройки', 'sub4', <SettingOutlined/>),
     getItem('Личный кабинет', 'sub65', <UserOutlined />),
 ];
+
+export const itemsWithLabels= [
+    { key: "ggf54", label: "Неоплачиваемый отпуск" },
+    { key: "ggf1", label: "Больничный" },
+    { key: "kfff1", label: "Отзыв из отпуска" },
+    { key: "msdd1", label: "Отпуск за свой счет" },
+    { key: "nsd1", label: "О продлении отпуска" },
+    { key: "dfjs1", label: "Дни донора" },
+    { key: "rgh1", label: "Учебный отпуск" },
+    { key: "shy1", label: "Ненормированный рабочий день" },
+    { key: "m1", label: "Отпуск по выполнению государственных обязанностей" },
+    { key: "kw1", label: "Участникам ЧАЭС" },
+    { key: "5", label: "Уйти в декретный отпуск" },
+    { key: "ps1", label: "Уход за детьми" },
+    { key: "n1", label: "Дни для диспансеризации" },
+    { key: "o1", label: "Отпуск в период беременности" },
+    { key: "pre1", label: "Уход за детьми" },
+    { key: "ryt1", label: "Рождением ребенка" },
+    { key: "vn1", label: "Досрочный выход из отпуска" },
+    { key: "sl1", label: "Заявление о выходе на работу" },
+];

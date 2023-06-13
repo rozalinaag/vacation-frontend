@@ -15,7 +15,8 @@ type Props = {
     posts: { items: string[], status: string },
     tags: { items: string[], status: string },
     selectedYear: string,
-    selectedDates: any
+    selectedDates: any,
+    selectedStatement: string
 }
 const initialState: Props = {
     posts: {
@@ -27,7 +28,8 @@ const initialState: Props = {
         status: 'loading'
     },
     selectedYear: '2023',
-    selectedDates: []
+    selectedDates: [],
+    selectedStatement: '',
 }
 
 const slice = createSlice({
@@ -39,7 +41,10 @@ const slice = createSlice({
         },
         setSelectedDates(state, action: PayloadAction<any>){
             state.selectedDates = action.payload;
-        }
+        },
+        setSelectedStatement(state, action: PayloadAction<string>){
+            state.selectedStatement = action.payload;
+        },
     },
     extraReducers: builder => {
         builder.addCase(fetchPosts.pending, (state) => {
@@ -69,5 +74,5 @@ const slice = createSlice({
     }
 });
 
-export const {setSelectedYear, setSelectedDates} = slice.actions;
+export const {setSelectedYear, setSelectedDates, setSelectedStatement} = slice.actions;
 export const vacationReducer = slice.reducer;
