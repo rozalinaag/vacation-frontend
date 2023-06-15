@@ -7,6 +7,8 @@ import Container from '@mui/material/Container';
 import { useSelector} from "react-redux";
 import { selectIsAuth} from "../../redux/slices/auth";
 import UserHeader from "./UserHeader";
+import icon from './img/icon.png';
+
 
 export const Header = () => {
   const isAuth = useSelector(selectIsAuth);
@@ -16,7 +18,7 @@ export const Header = () => {
       <Container maxWidth="xl">
         <div className={styles.inner}>
           <Link className={styles.logo} to="/">
-            <div>Vacation schedule</div>
+            <div className={styles.mainLogo}><img className={styles.icon} src={icon} alt={""}></img> <div>Vacation schedule</div></div>
           </Link>
           <div className={styles.buttons}>
             {isAuth ? (

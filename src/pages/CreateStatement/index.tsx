@@ -42,7 +42,7 @@ export const CreateStatement = () => {
           style={{width: 800}}
         >
           <Form.Item label="Заявление">
-            {statement ? <div>{statement}</div> :
+            {statement ? <div className={styles.statement}>{statement}</div> :
               <Select defaultValue={{statement}}>
                 {itemsWithLabels.map((item) =>
                   <Select.Option value={item.key}>{item.label}</Select.Option>

@@ -23,8 +23,8 @@
   text-decoration: none;
 
   &:hover {
-    background-color: #5666bd;
-    color: white;
+    background: #d0d0d0;
+    //color: #151010;
   }
 }
 
@@ -38,3 +38,13 @@
   }
 }
 
+.icon{
+  width: 47px;
+  height: 40px;
+}
+
+.mainLogo{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

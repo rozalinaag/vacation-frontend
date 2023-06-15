@@ -9,6 +9,7 @@ import type {MenuProps} from 'antd';
 import styles from './styles.module.scss'
 import {UserOutlined} from "@ant-design/icons";
 import Notification from "../Notification";
+import {setSelectedStatement} from "../../../redux/slices/vacation";
 
 function UserHeader() {
     const dispatch = useDispatch();
@@ -55,13 +56,17 @@ function UserHeader() {
         ]),
     ];
 
+    const handlerClick = () => {
+        dispatch(setSelectedStatement(''))
+    }
+
     return (
         <div className={styles.UserField}>
             <Notification/>
-            <Link to="/posts/create">
-                <Button className={styles.create} style={{background: '#5666bd', boxShadow: 'none'}}
-                        variant="contained">Создать заявление</Button>
-            </Link>
+              <Link to="/posts/create">
+                <Button onClick={handlerClick}  className={styles.create} style={{background: '#5666bd', boxShadow: 'none'}}
+                variant="contained" >Создать заявление</Button>
+                </Link>
             <div className={styles.UserFieldHeader}>
                 <Menu
                     className={styles.menu}
