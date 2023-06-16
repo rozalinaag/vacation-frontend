@@ -27,7 +27,7 @@ function Cabinet() {
             Агишева Розалина, разработчик
           </div>
           <div>
-            Команда развития Sharepoint
+            Команда развития Магнит
           </div>
         </div>
         <Form.Item label="О себе">

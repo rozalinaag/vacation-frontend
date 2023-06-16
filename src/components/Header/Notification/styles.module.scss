@@ -12,3 +12,31 @@
   align-items: center;
   justify-content: center;
 }
+
+.bellWrapper{
+  position: relative;
+}
+
+.point{
+  background: red;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  bottom: 3px;
+  right: -4px;
+  animation-duration: 2s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slidein {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 5px 3px 2px gray;
+    background: red;
+    border: 5px solid red;
+  }
+}
