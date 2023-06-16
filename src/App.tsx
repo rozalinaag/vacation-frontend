@@ -12,6 +12,7 @@ import { ConfigProvider } from 'antd'
 import ru from 'antd/locale/ru_RU'
 import dayjs from 'dayjs'
 import 'dayjs/locale/es'
+import Cabinet from "./pages/Cabinet";
 dayjs.locale('ru')
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
                             <Route path="/add-post" element={<AddPost/>}/>
                             <Route path="/login" element={<Login/>}/>
                             <Route path="/register" element={<Registration/>}/>
+                            <Route path="/cabinet" element={<Cabinet/>}/>
                         </Routes>
                 </div>
             </Container>

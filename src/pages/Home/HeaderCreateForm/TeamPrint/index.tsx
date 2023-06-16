@@ -9,7 +9,7 @@ function TeamPrint() {
   return (
     <div className={styles.upLine}>
       <div className={styles.title}>
-        <img src={group} alt={'group'} className={styles.titleIcon}/> Команда развития сети</div>
+        <img src={group} alt={'group'} className={styles.titleIcon}/>Команда развития Sharepoint</div>
       <div><PrinterOutlined className={styles.print}/></div>
     </div>
   );

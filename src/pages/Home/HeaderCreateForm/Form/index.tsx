@@ -6,12 +6,13 @@ import dayjs from "dayjs";
 import locale from "antd/locale/ru_RU";
 import Button from "@mui/material/Button";
 import {useAppDispatch} from '../../../../redux/store';
-import {setSelectedYear, setSelectedDates} from "../../../../redux/slices/vacation";
+import {setSelectedYear, setSelectedDates, setSelectedNewDate} from "../../../../redux/slices/vacation";
 import {Modal} from "antd";
 import CreateVacation from "../../CreateVacation";
 
 function Form() {
   const [createVacationModal, setCreateVacationModal] = useState <boolean>(false);
+  const [dates, setDates] = useState <any>();
   const {RangePicker} = DatePicker;
 
 
@@ -28,6 +29,7 @@ function Form() {
 
   const handleDates = (date: any) => {
     dispatch(setSelectedDates(date))
+    setDates(date)
   }
 
   const handleClick = () => {
@@ -37,6 +39,7 @@ function Form() {
   const handleOk = () => {
     //запрос на создание отпуска
     setCreateVacationModal(false);
+    dispatch(setSelectedNewDate(dates))
   };
 
   const handleCancel = () => {

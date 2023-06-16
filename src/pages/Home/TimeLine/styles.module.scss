@@ -22,3 +22,27 @@
 .timeLine{
   margin-left: 135px;
 }
+
+.createVacation{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 500px;
+  font-size: 14px;
+}
+
+.days{
+  display: flex;
+  gap: 20px;
+}
+
+.count{
+  background: #98c78a;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.check{
+  font-weight: 600;
+  color: #4077cc;
+}

@@ -1,13 +1,9 @@
-import React, {useEffect, useState} from "react";
-import Grid from '@mui/material/Grid';
+import React, {useEffect} from "react";
 // @ts-ignore
 import styles from './styles.module.scss';
 import Divider from "@mui/material/Divider";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchPosts, fetchTags} from "../../redux/slices/vacation";
-import {Post} from '../../components/Post';
-import {TagsBlock} from '../../components/TagsBlock';
-import {CommentsBlock} from '../../components/CommentsBlock';
 import TimeLine from "./TimeLine";
 import Months from "./Months";
 import {UserInfo} from "../../components";
@@ -16,15 +12,13 @@ import {Navigate} from "react-router-dom";
 import photo from './img/myphoto.jpg'
 import {selectIsAuth} from "../../redux/slices/auth";
 import HeaderCreateForm from "./HeaderCreateForm";
+import {useAppSelector} from "../../redux/store";
 
 export const Home = () => {
   const dispatch: any = useDispatch();
   const isAuth = useSelector(selectIsAuth);
+  const selectedNewDates = useAppSelector((state) => state.vacation.selectedNewDate);
   // @ts-ignore
-  const {posts, tags} = useSelector(state => state.vacation);
-
-  const isPostsLoading = posts.status === 'loading';
-  const isTagsLocading = tags.status === 'loading';
 
   useEffect(() => {
     dispatch(fetchPosts());
@@ -117,7 +111,7 @@ export const Home = () => {
               <TimeLine reserved={[{weekNumber: 8, vacationDays: 7},
                   {weekNumber: 37, vacationDays: 7},
                   {weekNumber: 38, vacationDays: 7},
-                  {weekNumber: 50, vacationDays: 7}]} idPerson={"m"}/>
+                  {weekNumber: 50, vacationDays: 7}]} idPerson={"m"} selectedNewDates = {selectedNewDates}/>
             </div>
           </div>
         </div>

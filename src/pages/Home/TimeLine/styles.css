@@ -1,8 +1,8 @@
-.selected{
-  background: #a0aef5;
-}
-
 .reserved{
   /*background: #efb6b6;*/
   background: #bfeaad;
+}
+
+.new{
+  background: #a0aef5;
 }

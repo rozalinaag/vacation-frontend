@@ -11,8 +11,9 @@ import {
 import React from 'react';
 // @ts-ignore
 import styles from './index.module.scss'
-import {useAppSelector} from "../../redux/store";
+import {useAppDispatch, useAppSelector} from "../../redux/store";
 import {itemsWithLabels} from "../Menu/items";
+import {setSelectedNewDate} from "../../redux/slices/vacation";
 
 const {RangePicker} = DatePicker;
 const {TextArea} = Input;
@@ -25,6 +26,7 @@ const normFile = (e: any) => {
 };
 
 export const CreateStatement = () => {
+  const dispatch = useAppDispatch();
   const statement: string = useAppSelector(state => state.vacation.selectedStatement)
 
   const handlerSubmit =() => {
